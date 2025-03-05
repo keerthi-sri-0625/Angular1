@@ -1,0 +1,27 @@
+<h2>Angular Built-in Pipes Examples</h2>
+
+<!-- DatePipe: Format date -->
+<p><strong>Formatted Date:</strong> {{ currentDate | date: 'fullDate' }}</p>
+
+<!-- CurrencyPipe: Format number as currency -->
+<p><strong>Price (Currency Pipe):</strong> {{ price | currency: 'USD' }}</p>
+
+<!-- DecimalPipe: Format number with a specific number of decimal places -->
+<p><strong>Price (Decimal Pipe):</strong> {{ price | number: '1.2-2' }}</p>
+
+<!-- UpperCasePipe: Convert text to uppercase -->
+<p><strong>Uppercase Product Name:</strong> {{ productName | uppercase }}</p>
+
+<!-- LowerCasePipe: Convert text to lowercase -->
+<p><strong>Lowercase Product Name:</strong> {{ productName | lowercase }}</p>
+
+<!-- JsonPipe: Convert object/array to JSON string -->
+<p><strong>Items (JSON Pipe):</strong> {{ items | json }}</p>
+
+<!-- SlicePipe: Slice the array -->
+<p><strong>Sliced Items (Slice Pipe):</strong> {{ items | slice: 1:3 }}</p>
+
+<h2>Chaining Pipes Example</h2>
+<!-- Chaining Pipes: Apply multiple pipes -->
+<p><strong>Chained (Currency and Uppercase):</strong> {{ price | currency: 'USD' | uppercase }}</p>
+

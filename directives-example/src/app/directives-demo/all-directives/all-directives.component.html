@@ -1,0 +1,33 @@
+<h2>Component Directive Example</h2>
+<app-nested></app-nested>  <!-- Nested component is being used here -->
+
+<h2>Structural Directives Example</h2>
+
+<!-- Using *ngIf for conditional display -->
+<div *ngIf="isVisible">
+  This is conditionally visible based on the isVisible flag!
+</div>
+
+<!-- Using *ngFor to loop through items -->
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+
+<!-- Button to toggle visibility -->
+<button (click)="toggleVisibility()">Toggle Visibility</button>
+
+<h2>Attribute Directives Example</h2>
+
+<!-- Using ngClass to conditionally add a CSS class -->
+<div >
+  This is using ngClass to dynamically add a class.
+</div>
+
+<!-- Using ngStyle to conditionally apply styles -->
+<div >
+  This is using ngStyle to dynamically set styles.
+</div>
+
+<!-- Button to toggle styles and class -->
+<button (click)="toggleStyles()">Toggle Styles</button>
+
