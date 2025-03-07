@@ -1,0 +1,43 @@
+<div>
+  <!-- Template-Driven Form -->
+  <h2>Template-Driven Form</h2>
+  <form #templateForm="ngForm" (ngSubmit)="onTemplateSubmit()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="templateUser.name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="templateUser.email" required>
+
+    <button type="submit" [disabled]="!templateForm.form.valid">Submit</button>
+  </form>
+  <div *ngIf="submittedTemplate">
+    <p><strong>Template Form Data:</strong></p>
+    <pre>{{ templateUser | json }}</pre>
+  </div>
+
+  <hr>
+
+  <!-- Reactive Form -->
+  <h2>Reactive Form</h2>
+  <form [formGroup]="reactiveForm" (ngSubmit)="onReactiveSubmit()">
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name">
+
+    <div *ngIf="reactiveForm.get('name').invalid && reactiveForm.get('name').touched">
+      <small>Name is required and must be at least 3 characters long.</small>
+    </div>
+
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email">
+
+    <div *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched">
+      <small>Invalid email address.</small>
+    </div>
+
+    <button type="submit" [disabled]="reactiveForm.invalid">Submit</button>
+  </form>
+  <div *ngIf="submittedReactive">
+    <p><strong>Reactive Form Data:</strong></p>
+    <pre>{{ reactiveForm.value | json }}</pre>
+  </div>
+</div>
